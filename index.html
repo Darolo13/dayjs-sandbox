@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day.js Sandbox</title>
+</head>
+
+<body>
+    <h1>Day.js Sandbox</h1>
+
+    <div class="container">
+        <div class="item">
+            <strong>dayjs('2018-08-08') : </strong>
+            <span class="dayjs-parser"></span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="item">
+            <strong>dayjs().format('YYYY-MM-DD HH:mm:ss')：</strong>
+            <span class="dayjs-show"></span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="item">
+            <strong>dayjs().set('month', 3).month()：</strong>
+            <span class="dayjs-get"></span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="item">
+            <strong>dayjs().add(1, 'year')：</strong>
+            <span class="dayjs-do"></span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="item">
+            <strong>dayjs().isBefore(dayjs())：</strong>
+            <span class="dayjs-query"></span>
+        </div>
+    </div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.7.8/dayjs.min.js"></script>
+<script>
+    var dayJsParser = document.querySelector('.dayjs-parser');
+    dayJsParser.innerHTML = dayjs('2018-08-08');
+
+    var dayjsShow = document.querySelector(".dayjs-show")
+    dayjsShow.innerHTML = dayjs().format('YYYY-MM-DD HH:mm:ss')
+
+    var dayjsGet = document.querySelector(".dayjs-get")
+    dayjsGet.innerHTML = dayjs().set('month', 3).month()
+
+    var dayjsDo = document.querySelector(".dayjs-do")
+    dayjsDo.innerHTML = dayjs().add(1, 'year')
+
+    var dayjsQuery = document.querySelector(".dayjs-query")
+    dayjsQuery.innerHTML = dayjs().isBefore(dayjs())
+
+</script>
+
+</html>
